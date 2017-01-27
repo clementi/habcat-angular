@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Hipparcos</th>
+      <th>RA</th>
+      <th>Dec</th>
+      <th>Mag</th>
+      <th>Dist (pc) to Sol</th>
+      <th>x (pc)</th>
+      <th>y (pc)</th>
+      <th>z (pc)</th>
+      <th>B &ndash; V</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="habstar in habstars">
+      <td><a ng-href="/habstar/{{ habstar.hip }}">{{ habstar.hip }}</a></td>
+      <td>{{ habstar.loc_cel.ra[0] | number }}<sup>h</sup>{{ habstar.loc_cel.ra[1] | number }}<sup>m</sup>{{ habstar.loc_cel.ra[2] | number:2 }}<sup>s</sup></td>
+      <td>{{ habstar.loc_cel.dec[0] | number }}&deg;{{ habstar.loc_cel.dec[1] | number }}'{{ habstar.loc_cel.dec[2] | number:2 }}"</td>
+      <td>{{ habstar.mag | number:2 }}</td>
+      <td>{{ habstar.dist_pc | number:2 }}</td>
+      <td>{{ habstar.loc_cart_pc[0] | number:2 }}</td>
+      <td>{{ habstar.loc_cart_pc[1] | number:2 }}</td>
+      <td>{{ habstar.loc_cart_pc[2] | number:2 }}</td>
+      <td>{{ habstar.bmv.v }} &pm; {{ habstar.bmv.s }}</td>
+    </tr>
+  </tbody>
+</table>
