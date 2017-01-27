@@ -14,6 +14,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/PACE/themes/blue/pace-theme-minimal.css">
     <base href="/">
   </head>
   <body ng-app="habcatAngularApp">
@@ -71,6 +72,18 @@
        ga('send', 'pageview');
     </script>
 
+    <script>
+      window.paceOptions = {
+        document: true, // disabled
+        eventLag: true,
+        restartOnPushState: true,
+        restartOnRequestAfter: true,
+        ajax: {
+          trackMethods: [ 'POST','GET']
+        }
+      };
+    </script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -82,6 +95,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/PACE/pace.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
